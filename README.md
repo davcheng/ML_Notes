@@ -1,6 +1,23 @@
 ## One MBAs quest to learn Machine Learning like his (startup) life depends on it.
 The barrier to entry for getting into ML is pretty steep, and not because it's tough, but because a lot of the resources are so heavy with jargon. This is an attempt to try and simplify everything I've learned and am continuing to learn around ML, neural networks, deep learning, etc.
 
+# What is Machine Learning vs. What isn't Machine learning
+Machine learning is learning by examples.
+![alt text](https://imgs.xkcd.com/comics/machine_learning.png)
+For instance, if you are trying to find out if a picture is pizza or not, you could show it a bunch of pictures of pizza and a bunch of pictures of not pizza and it will slowly (after training) figure out how to tell the difference (just like a child would). The model could start to identify that triangular shapes are common in all of the "TRUE, THIS IS A PIZZA" pictures.
+
+Conversely, a Non-Machine Learning approach would be, "I know what pizza looks like, I'm going to write code that looks for triangles that have this proportion, and look for pepperonis on it" - the code would NEVER need to see a pizza first, it would just work. What you're doing here is "hard-coding the model" yourself so that you don't need to train it. This is great for easy things to code like "Pizza or Not", but breaks down for more complex tasks/if you don't, a. have incredible domain knowledge of pizza, b. feel like coding every possible feature that could discern between pizza or not pizza, c.
+
+Now if all pizzas were pretty similar, and you are okay with a fairly rigid definition (perhaps you are just at only Cici's pizzas, you can just have an exact ), it might be far less efficient to use a machine learning approach since you already know exactly what you're looking for.
+
+# Overview
+There are three types of learning:
+1. Supervised Learning - learning to predict an output when given an input vector. There are two types: Regression (output you're guessing is a real number, e.g., price of stocks in six months), and Classification (output is a class label, e.g., is this a hot dog?)
+2. Unsupervised Learning - Discover good internal representation of an input
+3. Reinforcement Learning - Learning to select an action (decision) based on maximizing some payoff function (used for Alpha Go in teaching it how to play Go)
+
+
+
 # 1. Basic principle
 y = Wx+b
 where y = output, x = input, W = weights (aka parameters that are slowly tuned) and b = bias
@@ -27,12 +44,7 @@ notes: this is still linear because the decision surface is still linear.
 ## Terms Related to Model Architecture:
 
 ### Vanishing gradient -
-Some training methods are gradient-based, meaning, they play around with weights (parameters) and
-see how that affects the ouput. Since the learning is computed based on how much a change in the parameter
-impacts a change in the output (gradient), if the gradient becomes too small, the network will have a very difficult
-time learning because the levers that it's trying to pull for guess and check are way too small (i.e. a large change in the
-parameter value doesn't have a big impact on the output). All of this is dependent on the activation function as each layer "squashes"
-input into a small output range (sigmoid maps ALL possible numbers to [0,1]), and after several layers of this squashing, there is hardly any change in the output.
+Some training methods are gradient-based, meaning, they play around with weights (parameters) and see how that affects the output (whatever the model is trying to guess). Since the learning is computed based on how much a change to a parameter (i.e., if I see blue, I will more likely think this is a picture of an ocean) impacts a change in the output (is this a picture of an ocean?), if the gradient becomes too small, the network will have a very difficult time learning because the levers that it's trying to pull for guess and check are way too small (i.e. a large change in the parameter value doesn't have a big impact on the output). All of this is dependent on the activation function as each layer "squashes" input into a small output range (sigmoid maps ALL possible numbers to [0,1]), and after several layers of this squashing, there is hardly any change in the output. Effectively making it so that if I show a picture of an ocean with all this blue, the model won't really know because the features it's looking for haven't been clearly identified.
 
 problem is exacerbated as the number of layers increases.
 https://www.quora.com/What-is-the-vanishing-gradient-problem
