@@ -1,4 +1,5 @@
 ## One MBAs quest to learn Machine Learning like his (startup) life depends on it.
+The barrier to entry for getting into ML is pretty steep, and not because it's tough, but because a lot of the resources are so heavy with jargon. This is an attempt to try and simplify everything I've learned and am continuing to learn around ML, neural networks, deep learning, etc.
 
 # 1. Basic principle
 y = Wx+b
