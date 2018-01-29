@@ -22,11 +22,11 @@ The architecture for classification looks like this:
 
 notes: this is still linear because the decision surface is still linear.
 
-Terms
+# Glossary
 
-Model Architecture:
+## Terms Related to Model Architecture:
 
-Vanishing gradient -
+### Vanishing gradient -
 Some training methods are gradient-based, meaning, they play around with weights (parameters) and
 see how that affects the ouput. Since the learning is computed based on how much a change in the parameter
 impacts a change in the output (gradient), if the gradient becomes too small, the network will have a very difficult
@@ -38,11 +38,11 @@ problem is exacerbated as the number of layers increases.
 https://www.quora.com/What-is-the-vanishing-gradient-problem
 
 
-Activation Functions -
+### Activation Functions -
 Used to go from a
 
-ReLU - Rectified Linear Unit
+### ReLU - Rectified Linear Unit
 This is an activation function
 
 
-Dropout - ignoring random nodes so that
+### Dropout - ignoring random nodes so that
