@@ -14,10 +14,9 @@ As you can see, ML can be pretty powerful but if you know all of the features, e
 # Overview
 There are three types of learning:
 1. Supervised Learning - you have a bunch of training data (examples of what you're trying to predict) and someone or something has gone through each data point and labeled it with the "answer".
+  learning to predict an output when when you have a bunch of labeled input data (labeled meaning, "I know the ground truth (whatever it is I'm trying to predict) for this data point in my training data").  
 
-learning to predict an output when when you have a bunch of labeled input data (labeled meaning, "I know the ground truth (whatever it is I'm trying to predict) for this data point in my training data").  
-
-There are two types of supervised learning: Regression (output you're guessing is a real number, e.g., price of stocks in six months) and Classification (output is a class label, e.g., is this pizza or not? guess what month is it based on temperature/precipitation/humidity?)
+  There are two types of supervised learning: Regression (output you're guessing is a real number, e.g., price of stocks in six months) and Classification (output is a class label, e.g., is this pizza or not? guess what month is it based on temperature/precipitation/humidity?)
 
 2. Unsupervised Learning - Discover good internal representation of an input; for instance, if you give your algorithm a ton of pictures of pizza and not pizza, but don't tell it which one is which, it cannot magically determine that this is pizza, and this isn't, but it can cluster (group) the data into piles based on similarities (these inputs look/sound/feel similar).  
 
