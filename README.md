@@ -1,9 +1,9 @@
 ## One MBAs quest to learn Machine Learning like his (startup) life depends on it.
-The barrier to entry for getting into ML is pretty steep, and not because it's tough, but because a lot of the resources are so heavy with jargon. This is an attempt to try and simplify everything I've learned and am continuing to learn around ML, neural networks, deep learning, etc.
+The barrier to entry for getting into ML is pretty steep, and not because it's tough, but because a lot of the resources are jargon heavy and throw in complex formulas to scare non-nerds away. This is an attempt to try and simplify everything I've learned - and am continuing to learn - around ML, neural networks, deep learning, etc.
 
 # What is Machine Learning vs. What isn't Machine learning
-Machine learning is learning by examples.
-![alt text](https://imgs.xkcd.com/comics/machine_learning.png)
+Machine learning is learning by examples.  
+![alt text](https://imgs.xkcd.com/comics/machine_learning.png)  
 For instance, if you are trying to find out if a picture is pizza or not, you could show it a bunch of pictures of pizza and a bunch of pictures of not pizza and it will slowly (after training) figure out how to tell the difference (just like a child would). The model could start to identify that triangular shapes are common in all of the "TRUE, THIS IS A PIZZA" pictures.
 
 Conversely, a Non-Machine Learning approach would be, "I know what pizza looks like, I'm going to write code that looks for triangles that have this proportion, and look for pepperonis on it" - the code would NEVER need to see a pizza first, it would just work. What you're doing here is "hard-coding the model" yourself so that you don't need to train it. This is great for easy things to code like "Pizza or Not", but breaks down for more complex tasks/if you don't, a. have incredible domain knowledge of pizza, b. feel like coding every possible feature that could discern between pizza or not pizza, c.
