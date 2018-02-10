@@ -1,0 +1,18 @@
+Bidirectional LSTM
+Source: https://pdfs.semanticscholar.org/83d6/1d9b71a838aa150d7ef232dc6d4c73e24250.pdf?_ga=1.187838062.730356906.1493526584
+
+For NN, there are two ways to incorporate context into sequences:
+1. Time-windows: Collect input using time-windows and treat the task as spatial (CNN)
+2. Standard RNN: Use recurrent connections to model the flow of time directly
+
+Time windows (method 1) has two major drawbacks:
+1. picking the right window size is challenging (too small and important information will be overlooked, too large and overfitting will occur)
+2. network is unable to adapt to shifted or time-warped sequences (Hello versus Heeelllllo verus Heloooo)
+
+However, Standard RNNs (method 2) innately has drawbacks:
+Standard RNN (any RNN with hidden layers of recurrently connected neurons)
+1. Outputs are processed in temporal order so you only have previous context available
+2. Often difficult to learn time-dependencies more than a few time steps long (it doesn't know what features to remember, can become too computationally expensive to remember everything).
+
+Solution to problem one is bidrectional networks.
+Solution to problem two is LSTM (capable of long-term dependencies using forget gates)
