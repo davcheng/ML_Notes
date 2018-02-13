@@ -16,3 +16,5 @@ Standard RNN (any RNN with hidden layers of recurrently connected neurons)
 
 Solution to problem one is bidrectional networks.
 Solution to problem two is LSTM (capable of long-term dependencies using forget gates)
+
+This is particularly great for speech

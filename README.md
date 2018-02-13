@@ -1,33 +1,36 @@
 ## One MBAs quest to learn Machine Learning like his (startup) life depends on it.
-The barrier to entry for getting into ML is pretty steep, and not because it's tough, but because a lot of the resources are jargon-heavy and throw in complex formulas to scare non-nerds away. This is an attempt to try and simplify everything I've learned - and am continuing to learn - around ML, neural networks, deep learning, etc.
+The barrier to entry for getting into ML is pretty steep, and not because it's tough, but because a lot of the resources are jargon-heavy and throw in complex formulas to intimidate. This is an attempt to try and simplify everything I've learned - and am continuing to learn - around ML, neural networks, deep learning, etc.
 
 # What is Machine Learning vs. What isn't Machine learning
 ![alt text](https://imgs.xkcd.com/comics/machine_learning.png)  
-"In ML you use data to train a model. That model will be used to make predictions on unseen data."
+>"In machine learning you use data to train a model. That model will be used to make predictions on unseen data." - someone on Quora
 
-Machine learning, at its core, is learning to predict an outcome based on a set of examples. For instance, if you are trying to figure out if a picture is "pizza" or "not". You could look through a bunch of pictures of "pizza" and a bunch of pictures of "not pizza", and slowly [or in machine learning speak, after "training"], you would figure out how to tell the difference.  Just like how a child (or an individual who has never seen or heard of the concept of pizza), the model would (at some point) start to identify patterns, known as features, in determining what IS and what ISN'T pizza (e.g., triangular-shaped slices, round greasy-looking red objects (pepperonis), brown crust, etc.). These features would be remembered and stored to make future predictions.
+Machine learning, at its core, is learning to predict an outcome based on a set of examples. For instance, if you are trying to figure out if a picture is "pizza" or "not". You could look through a bunch of pictures of "pizza" and a bunch of pictures of "not pizza", and slowly [or in machine learning speak, after "training"], you would figure out how to tell the difference.  Just like how a child (or any individual) who has never seen or heard of the concept of pizza, the model would (at some point) start to identify patterns, known as features, in determining what IS and what ISN'T pizza (e.g., triangular-shaped slices, round greasy-looking red objects (pepperonis), brown crust, etc.). These features would be remembered and stored to make future predictions.
 
-Conversely, a Non-Machine Learning approach would be, "I know what pizza looks like, I'm going to write code that looks for triangles that have this proportion, and look for round pepperonis on it." The algorithm (model) would NEVER need to see a pizza first, it would just work. What you're doing here is "hard-coding the model" yourself so that you don't need to train it with a lot of data. To build off of this heinously stupid pizza example, if instead, you needed to teach someone what pizza is, but have no examples to show them, you could just describe defining characteristics of pizza and say "remember this if you ever get to a critical, 'is this pizza?' moment". And again, this Non-ML approach can be great for many (read: standardized) tasks like "[incredibly specific version of] Pizza or Not", but it breaks down for more complex tasks/if you don't, a. have incredible domain knowledge of pizza, b. have incredible domain knowledge of what isn't pizza, or c. feel like coding every possible variant of features that could differentiate the two to create a robust model.
+Conversely, a Non-Machine Learning approach would be, "I know what pizza looks like, I'm going to write code that looks for triangles that have this proportion, and look for round pepperonis on it." The algorithm (model) would NEVER need to see a pizza first, it would just work. What you're doing here is "hard-coding the model" yourself so that you don't need to train it with a lot of data. For this stupid pizza example, the Non-ML approach would be: if instead, you needed to teach someone what pizza is, but have no examples to show them, you could just describe defining characteristics of pizza and say "remember this if you ever get to a critical, 'is this pizza?' moment". And again, this Non-ML approach can be great for many tasks of "Pizza or Not", but it can break down for more complex definitions of pizza/if you don't, a. have incredible domain knowledge of pizza, b. have incredible domain knowledge of what isn't pizza, or c. feel like coding every possible variant of features that could differentiate the two to create a robust model.
 
-Now if all pizzas were pretty similar, and you are okay with a fairly rigid definition (perhaps you are just identifying only Domino's pizzas, and only accept a hand-tossed cheese pizza as the only true pizza), it might be far less efficient to use a machine learning approach since you already know exactly what you're looking for (white isosceles triangle, between 4-5 inches with a brown rounded edge). But you'd be pretty doomed if you took your round algorithm to Ledo's where square slices would ruin your model.
+Now if all pizzas were pretty similar, and you are okay with a fairly rigid definition (perhaps you are just identifying only Domino's pizzas, and only accept a hand-tossed cheese pizza as the only true pizza), it might be far less efficient to use a machine learning approach since you already know exactly what you're looking for (white isosceles triangle, between 4-5 inches with a brown rounded edge, red marina sauce scattered throughout). But you'd be pretty doomed if you took your round algorithm to a place that serves grandma slices, where square-shaped pizzas would ruin you.
 
-As you can see, ML can be pretty powerful but it's important to remember that it is very expensive (computationally). ML takes a pretty powerful computer/server to run on efficiently (read: not for several days while you hope your laptop doesn't explode while you're sleeping at night). So if you know all of the features, expect a relatively consistent set of samples to predict, and don't have a lot of data to train things on, you might be better off just keeping it simple with other "shallow" learning techniques (linear regression, K-Nearest Neighbor (kNN), Support Vector Machines (SVM), etc.).
+As you can see, ML can be pretty powerful but it's important to remember that it is very expensive (computationally). ML takes a pretty powerful computer/server to run on efficiently [not several days while you hope your laptop doesn't explode while you're sleeping at night]. So if you know all of the features, expect a relatively consistent set of samples to predict, and don't have a lot of data to train things on, you might be better off just keeping it simple with other "shallow" learning techniques (linear regression, K-Nearest Neighbor (kNN), Support Vector Machines (SVM), etc.).
 
 # Overview
-There are three primary types of learning:
-1. Supervised Learning - When you have a bunch of training data that's been labeled. There are two types of supervised learning: Regression (output you're guessing is a real number, e.g., price of stocks in six months) and Classification (output is a class label, e.g., is this pizza or not? guess what month is it based on temperature/precipitation/humidity?)
+Now that you understand what the basic premise behind Machine Learning is, let's get into the three primary types of "learning":
 
-2. Unsupervised Learning - Here's some data, I won't give you the right answer for the data - find interesting structure/patterns/groupings. For instance, if you give your algorithm a ton of pictures of pizza and not pizza, but don't tell it which one is which, it cannot magically determine that this is pizza, and this isn't, but it can cluster (group) the data into piles based on similarities (these inputs look/sound/feel similar).  
+1. Supervised Learning - When you have a bunch of data to be used for training your model that's been labeled. Labeled data means somewhere, somehow, each data row that you're using to train your model has been labeled with a "truth" (e.g., this row of data is pizza). Within supervised learning, there are two types: Regression (output you're guessing is a real number, e.g., price of stocks in six months) and Classification (output is a class label, e.g., is this pizza or not? is it fall, spring, summer, or winter based on temperature, precipitation, and humidity?)
 
-3. Reinforcement Learning - Learning to select an action (decision) based on maximizing some payoff function (used for Alpha Go in teaching it how to play Go)
+2. Unsupervised Learning - Here's some data, I won't give you the right answer for the data - find interesting structure/patterns/groupings. For instance, if you give your algorithm a ton of pictures of pizza and not pizza, but don't tell it which one is which, it cannot magically determine that this is pizza, and this isn't, but it can cluster (group) the data into piles based on similarities (these inputs look/sound/feel similar). From there, you can extract what you need out of the groups. This is great for data exploration and finding patterns you didn't even know existed.
+
+3. Reinforcement Learning - Learning to select an action (decision) based on maximizing some payoff function (used for Alpha Go in teaching it how to play Go).
 
 
 # Basic mathematical principle
+While training your model, there are 4 primary components:
+1. the input (data)
+2. the output (prediction)
+3. weights (magic numbers, known as parameters, that are tweaked over and over to make your neural network -- or the math equation that turns your input into the desired output)
+4. bias ()
 y = Wx+b
 where y = output, x = input, W = weights (the parameters that are slowly tuned to build your neural network) and b = bias (perhaps in the universe of pictures, there are more "not pizza" than "pizza", so if it's a toss up based on your trained weights (W), guessing "not pizza" would be prudent because there is a greater likelihood (bias)).
-
-
-
 
 ## Linear regression:
 y = Wx + Wx + ... + Wx +b
@@ -58,20 +61,34 @@ Training Set  --> Learning algorithm --> Prediction
 
 
 # Performance
-After you've built and trained your model, the next step is to figure out if it's actually any good. While it sounds pretty simple, it gets pretty sticky pretty quickly - particularly with these three terms that I am convinced no one truly remembers for more than 10 minutes. Hopefully this (and whatever diagrams your 7th grade science teacher showed you) will help.
+After you've built and trained your model, the next step is to figure out if it's actually any good. While it sounds pretty simple, it gets pretty sticky pretty quickly - particularly with these three terms - accuracy, precision, and recall - that I am convinced no one truly remembers for more than 10 minutes. Hopefully this (and whatever diagrams your 7th grade science teacher showed you) will help.
 
+Accuracy - This is the number of correct predictions divided by the number of total predictions. While this seems like a pretty good measure of performance (and it might be fine most of the time), data is tricky and horrible. For example, pretend you are screening people for some rare disease that only 1 in a 1000 people have. If your "algorithm" for determining if someone is "disease-free" is "EVERYONE IS DISEASE-FREE", your accuracy would be pretty stellar (99.9% to be exact). And if your boss only used accuracy to evaluate performance, he'd probably give you a promotion. But, unfortunately, you're probably going to be fired because your algorithm literally didn't identify a single person who actually had the disease. That's why accuracy isn't sufficient, and that's where precision and recall come in.
 
-Accuracy - This is the number of correct predictions divided by the number of total predictions. While this seems like a pretty good measurement for performance (and might be fine most of the time), data is tricky and horrible. For example, pretend you are screening people for some rare disease that only 1 in a 1000 people have. If your "algorithm" for determining if someone is "disease-free" is "EVERYONE IS DISEASE-FREE", your accuracy would be through the roof (99.9%). And if you only used accuracy to evaluate performance, you'd think you're a genius. But, obviously, you are an idiot because your algorithm literally didn't identify a single person who actually had the disease. That's where precision and recall come in...
+Precision - This is kind of like your "catch-rate". In the disease prediction example, precision is "how many people did you classify as having the disease", divided by the "total number of people that had the disease". Meaning, if you screened 3000 people, and 3 had the disease, and you're algorithm correctly identified 2 of them as having the disease, your precision would be 2/3. If in 3000 people, 3 had the disease, and you guessed 2999 of them had the disease and missed one of the ones that didn't, you're precision would still be 2/3 (since it doesn't care about the ones you marked as over-marked as "diseased"). There are certain cases where you would want higher precision, which would be more conservative (for instance, cancer screenings), where as other cases, you would wouldn't (spam emails... if only gmail would stop marking those important emails that I don't respond to because they were "marked as spam"...)
 
-Precision - Precision is how many people did you actually classified as having the disease, divided by the total number of people that had the disease. Meaning, if in 3000 people, 3 people had the disease, and you got 2 of them, your precision would be 2/3. If in 3000 people, 3 had the disease, and you guessed 2999 of them had the disease and missed one of the ones that didn't, you're precision would still be 2/3 (since it doesnt care about the ones you marked as "pregnant")
+Recall - This the "how many good eggs do you have in your basket" rate. This is the number of people who actually had the disease, within all of the people you flagged as having a disease. 
 
+Example Illustration
+You have an algorithm that predicts whether or not a person is pregnant (perhaps based on shopping history). Let's assume 1000 people visit the site, and only 10 are pregnant:
 
-Recall - This is the number of people who actually had the disease, within all of the people you flagged as having a disease.
+Case 1: You predict no one is pregnant
+accuracy = total correct predictions / total predictions = 990/1000 = 90%
+precision = total correctly identified / total that could have been correctly identified = 0/10 = 0%
+recall = total that were pregnant / total identified as pregnant = 0/0 = undefined
 
+Case 2: You predict everyone is pregnant
+accuracy = 10/1000 = 1%
+precision = 10/10 = 100% (you got everyone that was pregnant)
+recall = 10/1000 = 1%
 
-Recall
+Case 3: You
 
+For something like, marking someone as having a rare, but treatable life-threatening disease, you would probably want an algorithm with better precision (don't let anyone slip through the cracks).
 
+However, if you were making a spam detection algorithm for email filtering, you probably don't want to over mark things as spam (or you might miss an important email). In this example
+
+These examples highlight the core principle in performance which is, in order to figure out if a model/algorithm is "good" or not, it is imperative to first understand the cost of mistakes (is it better to over guess or under guess?). Usually what people will do is assign a cost to each of the four scenarios (incorrectly saying someone IS pregnant, incorrectly saying some IS NOT pregnant, correctly saying someone IS pregnant, and correctly saying someone IS NOT pregnant).
 
 ## Flavors of NN
 
